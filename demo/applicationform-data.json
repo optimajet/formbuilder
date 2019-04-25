@@ -1,0 +1,7 @@
+{
+  "title": "Test application",
+  "firstname": "John",
+  "lastname": "Doe",
+  "type": 2,
+  "comment": "This is a test application for John Doe"
+}

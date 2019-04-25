@@ -1,0 +1,52 @@
+{
+  "name": "optimajet-formbuilder",
+  "version": "0.0.1",
+  "description": "OptimaJet FormBuilder",
+  "main": "lib/app.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "start": "webpack-dev-server --hot --inline",
+    "dist": "webpack -p --config webpack.production.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optimateam/dwkit.git"
+  },
+  "keywords": [
+    "http://dwkit.com"
+  ],
+  "author": "OptimaJet",
+  "license": "SEE LICENSE IN eula.txt",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+    "babel-plugin-transform-es3-property-literals": "^6.22.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "hard-source-webpack-plugin": "^0.6.7",
+    "json5": "^0.5.1",
+    "moment": "^2.23.0",
+    "react": "^16.7.0",
+    "react-data-grid": "^4.0.9",
+    "react-datepicker": "1.6.0",
+    "react-dom": "^16.7.0",
+    "react-dropzone-component": "^3.2.0",
+    "reflux": "^6.4.1",
+    "semantic-ui-react": "^0.80.0",
+    "uuid": "^3.3.2",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.2"
+  },
+  "peerDependencies": {},
+  "devDependencies": {},
+  "bugs": {
+    "url": "http://dwkit.com"
+  },
+  "homepage": "http://dwkit.com"
+}

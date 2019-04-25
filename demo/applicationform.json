@@ -1,0 +1,102 @@
+[
+  {
+    "key": "header_1",
+    "data-buildertype": "header",
+    "content": "Application Form",
+    "size": "medium",
+    "subheader": "Make it easier",
+    "textAlign": "center"
+  },
+  {
+    "key": "form_1",
+    "data-buildertype": "form",
+    "children": [
+      {
+        "key": "title",
+        "data-buildertype": "input",
+        "label": "Title",
+        "fluid": true,
+        "other-required": false
+      },
+      {
+        "key": "formgroup_1",
+        "data-buildertype": "formgroup",
+        "widths": "equal",
+        "children": [
+          {
+            "key": "firstname",
+            "data-buildertype": "input",
+            "label": "First name",
+            "fluid": true
+          },
+          {
+            "key": "lastname",
+            "data-buildertype": "input",
+            "label": "Last name",
+            "fluid": true
+          }
+        ]
+      },
+      {
+        "key": "type",
+        "data-buildertype": "dropdown",
+        "label": "Type",
+        "fluid": true,
+        "selection": true,
+        "data-elements": "[{key: 0, value: '', text: ''},\n{key: 1, value: 1, text: 'Internal'},\n{key: 2, value: 2, text: 'External'},\n{key: 3, value: 2, text: 'Direct'}]",
+        "placeholder": ""
+      },
+      {
+        "key": "comment",
+        "data-buildertype": "textarea",
+        "label": "Comment",
+        "fluid": true,
+        "rows": 5
+      }
+    ],
+    "events": {},
+    "style-marginBottom": "10px"
+  },
+  {
+    "key": "btnSave",
+    "data-buildertype": "button",
+    "content": "Save",
+    "primary": true,
+    "fluid": false,
+    "events-onclick-actions": [
+      "validate",
+      "saveandexit"
+    ],
+    "events": {
+      "onClick": {
+        "active": true,
+        "actions": [
+          "save"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    }
+  },
+  {
+    "key": "btnCancel",
+    "data-buildertype": "button",
+    "content": "Cancel",
+    "primary": false,
+    "fluid": false,
+    "events-onclick-actions": [
+      "validate",
+      "saveandexit"
+    ],
+    "events": {
+      "onClick": {
+        "active": true,
+        "actions": [
+          "cancel"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    }
+  }
+]

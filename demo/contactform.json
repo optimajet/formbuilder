@@ -1,0 +1,54 @@
+[
+  {
+    "key": "demo-contactform",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "contactform",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "name",
+            "data-buildertype": "input",
+            "label": "Name",
+            "fluid": true,
+            "onChangeTimeout": 200
+          },
+          {
+            "key": "email",
+            "data-buildertype": "input",
+            "label": "Email",
+            "fluid": true,
+            "onChangeTimeout": 200
+          },
+          {
+            "key": "message",
+            "data-buildertype": "textarea",
+            "label": "Message",
+            "fluid": true,
+            "autoHeight": true,
+            "rows": "6"
+          },
+          {
+            "key": "sendbutton",
+            "data-buildertype": "button",
+            "content": "Send",
+            "basic": true,
+            "events": {
+              "onClick": {
+                "active": true,
+                "actions": [
+                  "send"
+                ],
+                "targets": [],
+                "parameters": []
+              }
+            }
+          }
+        ],
+        "style-marginBottom": "",
+        "style-marginTop": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "key": "toolbarbuttons",
+    "data-buildertype": "container",
+    "style-customcss": "demo-toolbarbuttons",
+    "style-marginTop": "10px",
+    "style-marginBottom": "10px",
+    "children": [
+      {
+        "key": "createbutton",
+        "data-buildertype": "button",
+        "content": "Create",
+        "basic": true,
+        "secondary": false,
+        "events": {
+          "onClick": {
+            "active": true,
+            "actions": [
+              "create"
+            ],
+            "targets": [],
+            "parameters": []
+          }
+        }
+      },
+      {
+        "key": "editbutton",
+        "data-buildertype": "button",
+        "content": "Edit",
+        "basic": true,
+        "secondary": false,
+        "events": {
+          "onClick": {
+            "active": true,
+            "actions": [
+              "edit"
+            ],
+            "targets": [],
+            "parameters": []
+          }
+        }
+      },
+      {
+        "key": "deletebutton",
+        "data-buildertype": "button",
+        "content": "Delete",
+        "basic": true,
+        "secondary": false,
+        "events": {
+          "onClick": {
+            "active": true,
+            "actions": [
+              "delete"
+            ],
+            "targets": [],
+            "parameters": []
+          }
+        }
+      }
+    ]
+  }
+]

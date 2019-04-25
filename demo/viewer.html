@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>OptimaJet Form Builder</title>
+    <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <script src="scripts/jquery.js" type="text/javascript"></script>
+    <script src="scripts/Chart.min.js" type="text/javascript"></script>
+    <link href="css/semantic.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/optimajet-formbuilder.css" rel="stylesheet" type="text/css" />
+
+    <div class="dwkit-formbuilder-header">
+        <div class="dwkit-formbuilder-header-left">
+            <a target="_blank" href="https://formbuilder.dev"><img class="dwkit-formbuilder-header-logo" src="/images/logoviewer.svg"></a>
+        </div>  
+        <div class="dwkit-formbuilder-header-center">
+            <button name="btnUpload" class="ui button buttontype2" role="button" onclick="javascript:onChooseFileUpload();">Upload</button>
+            <button name="btnDownload" class="ui button buttontype2" role="button" onclick="javascript:download();">Download</button>
+            <form action="/" method="post" id="builderUploadForm" style="display: none" onsubmit="return upload();">
+                <input type="file" id="builderUploadFile" onchange="javascript:onChangeFileUpload();" />
+                <input type="submit" id="builderUploadSubmit" />
+            </form>
+        </div>  
+    </div>
+    <div id="container" class="container"></div>
+    <script src="formbuilderdev-viewer.js" type="text/javascript"></script>
+
+    <script>
+    function download(){
+        const filename = "form.json";
+        var data = window.DWKitFormViewer.getModel();
+        var json = JSON.stringify(data, null, 2),
+            blob = new Blob([json], {type: "octet/stream"}),
+            encodedUri = window.URL.createObjectURL(blob);
+
+        if (typeof window.navigator.msSaveBlob !== 'undefined') {
+            window.navigator.msSaveBlob(blob, filename);
+        } else {
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", filename);
+            document.body.appendChild(link);
+            link.click();
+        }
+    };
+
+    function upload(){
+        var form = document.getElementById("builderUploadFile");
+        var file = form.files[0];
+        var reader = new FileReader();
+        reader.onload = (function(theFile) {
+        return function(e) {
+            var model = JSON.parse(e.target.result);
+            window.DWKitFormViewer.setModel(model);
+        };
+        })(file);
+
+        reader.readAsText(file);
+        return false;
+    }
+
+    function onChooseFileUpload(e){
+        $('#builderUploadFile').click();
+    }
+
+    function onChangeFileUpload(){
+        $('#builderUploadSubmit').click();
+    }
+    </script>
+</body>
+</html>
