@@ -21,6 +21,7 @@
                 <input type="file" id="builderUploadFile" onchange="javascript:onChangeFileUpload();" />
                 <input type="submit" id="builderUploadSubmit" />
             </form>
+            <button name="btnPrint" class="ui button" role="button" onclick="javascript:printForm();">Print</button>
         </div>  
     </div>
     <div id="container" class="container"></div>
@@ -60,12 +61,20 @@
         return false;
     }
 
+    function printForm(){
+        window.DWKitFormViewer.print();
+    }
+
     function onChooseFileUpload(e){
         $('#builderUploadFile').click();
     }
 
     function onChangeFileUpload(){
         $('#builderUploadSubmit').click();
+    }
+
+    function printForm(){
+        window.DWKitFormViewer.print();
     }
     </script>
 </body>

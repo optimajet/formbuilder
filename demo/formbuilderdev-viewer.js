@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import DWKitFormViewer from "./src/viewer";
+import {DWKitFormViewer} from "./build/optimajet-builder";
 
 function getQueryString() {
   // This function is anonymous, is executed immediately and
@@ -27,7 +27,7 @@ function getQueryString() {
 
 function getform(formname)
 {
-  var formurl = "/" + formname + ".json";
+  var formurl = formname + ".json";
   var source = $.ajax({
     url: formurl,
     async: false,
@@ -44,8 +44,8 @@ function eventErrProcess(obj, message){
   alert("Error from the form: " + message);
 }
 
-var formurl = "applicationform.json";
-var dataurl = "applicationform-data.json";
+var formurl = "./application-form.json";
+var dataurl = "./application-form-data.json";
 
 var props = {
   eventFunc: eventProcess,
@@ -59,7 +59,12 @@ var props = {
 
 var query = getQueryString();
 if(query != undefined && query.model != undefined){
-  props.model = JSON.parse(decodeURIComponent(query.model));
+  try{
+    props.model = JSON.parse(decodeURIComponent(query.model));
+  }
+  catch(ex){
+    props.modelurl = formurl;
+  }  
 }
 else{
   props.modelurl = formurl;

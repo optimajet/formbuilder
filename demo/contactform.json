@@ -26,7 +26,6 @@
             "data-buildertype": "textarea",
             "label": "Message",
             "fluid": true,
-            "autoHeight": true,
             "rows": "6"
           },
           {

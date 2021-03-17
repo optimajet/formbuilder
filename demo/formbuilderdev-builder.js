@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {DWKitFormBuider} from "./build/optimajet-builder";
+import {DWKitFormBuilder} from "./build/optimajet-builder";
 
 function getform(formname)
 {
@@ -20,7 +20,7 @@ function getAdditionalDataForControl(control,
     if(control.props["data-buildertype"] == "dictionary"){
       if(model == undefined){
         model = "item";
-      }  
+      }
       var items = [];
         for(var i = 0 ; i < 3; i++){
           var obj = {};
@@ -36,9 +36,16 @@ function getAdditionalDataForControl(control,
       var items = [];
       for(var i = 0 ; i < pageSize; i++){
         var obj = {};
-        control.props.columns.forEach(function(c){
-          obj[c.key] = c.key + "_" + (Number(startIndex) + Number(i));
-        });
+        if(control.props.columns == undefined){
+          obj["col1"] = "col1_" + (Number(startIndex) + Number(i));
+          obj["col2"] = "col2_" + (Number(startIndex) + Number(i));
+          obj["col3"] = "col3_" + (Number(startIndex) + Number(i));
+        }
+        else{
+          control.props.columns.forEach(function(c){
+            obj[c.key] = c.key + "_" + (Number(startIndex) + Number(i));
+          });
+        }
         items.push(obj);
       }
       callback({startIndex, pageSize, rowsCount, items});
@@ -46,7 +53,7 @@ function getAdditionalDataForControl(control,
   }
 
 function eventProcess(obj, p)
-{  
+{
   console.log("Event from form:", obj, p);
 }
 
@@ -54,19 +61,21 @@ function eventErrProcess(obj, message){
   alert("Error from the form: " + message);
 }
 
-var actions= ["validate", 
-  'refresh', 
-  'save', 
-  'saveandexit', 
-  'cancel', 
-  'recalc',
-  'add',
-  'edit',
-  'delete',
-  'gridEdit',
-  'gridDelete',
-  'gridCopy',
-  'gridAdd'];
+var actions= [
+  {text: "validate", icon: "browser"},
+  {text:'refresh', icon: "browser"},
+  {text:'save', icon: "browser"},
+  {text:'saveandexit', icon: "browser"},
+  {text:'cancel', icon: "browser"},
+  {text:'recalc', icon: "browser"},
+  {text:'add', icon: "browser"},
+  {text:'edit', icon: "browser"},
+  {text:'delete', icon: "browser"},
+  {text:'gridEdit', icon: "browser"},
+  {text:'gridDelete', icon: "browser"},
+  {text:'gridCopy', icon: "browser"},
+  {text:'gridAdd', icon: "browser"}
+];
 
 var openViewer = function(){
   var model = formbuilder.getData();
@@ -77,17 +86,17 @@ var openViewer = function(){
 
 var templates = ["contactform", "toolbarbuttons"];
 var buttons = [
-  { name: "viever", className: "buttontype1", onClick: openViewer, text: "Open in Viewer"}
+  { name: "viever", className: "primary", onClick: openViewer, text: "Open in Viewer"}
 ]
 var formbuilder;
 ReactDOM.render(
-    <DWKitFormBuider 
+    <DWKitFormBuilder
       showHeader={true}
-      actions={actions} 
-      getFormFunc={getform} 
+      actions={actions}
+      getFormFunc={getform}
       getAdditionalDataForControl={getAdditionalDataForControl}
       ref={(builder) => { formbuilder = builder; }}
-      downloadUrl="download.html?file=" 
+      downloadUrl="download.html?file="
       uploadUrl="upload.html?file="
       templates={templates}
       extraHeaderButtons={buttons}
@@ -96,4 +105,4 @@ ReactDOM.render(
 );
 
 
-formbuilder.load('applicationform');
+formbuilder.load('./application-form');

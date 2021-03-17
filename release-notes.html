@@ -1,4 +1,34 @@
 <h1>Release Notes</h1>
+<h2>1.6</h2>
+<ul>
+<li>Separation of basic functionality and library of controls (SemanticUI).</li>
+<li>Minor improvements.</li>
+</ul>
+<h2>1.5</h2>
+<ul>
+<li>Printing forms feature.</li>
+<li>New features for creating forms by repeater and container controls.</li>
+</ul>
+<h2>1.4</h2>
+<ul>
+<li>New FormBuilder design.</li>
+</ul>
+<h2>1.3</h2>
+<ul>
+<li>Some minor bugs have been fixed.</li>
+</ul>
+<h2>1.2</h2>
+<ul>
+<li>New collection component Repeater added. It draws a specified set of components for each collection entity and supports server paging.</li>
+<li>Settings for adaptive layout added for components. For example there can be 2 components in the form which display the same list - grid and repeater. You can set the grid to be displayed in the desktop mode, and repeater to be displayed in the mobile mode. If component is not displayed, it is not rendered, that is why even if there are 2 heavy components on the page, it does not affect performance.</li>
+<li>Component can be bound to any Property Name from form data.</li>
+<li>Substitutions now work in component collections. Use {row.propertyName} expression to access current item data.</li>
+<li>Dates and numbers formatting added in substitutions. For example, {row.TransitionTime:DD.MM.YYYY HH:mm:ss} or {Amount:0,000.00}. moment.js is used to format dates. numeral.js is used to format numbers. If you need to use the formatting string set in localization, write {row.TransitionTime:local}.</li>
+</ul>
+<h2>1.1</h2>
+<ul>
+<li>Some minor bugs have been fixed.</li>
+</ul>
 <h2>1.0</h2>
 <ul>
 <li>The first release of OptimaJet FormBuilder 1.0.</li>

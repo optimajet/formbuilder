@@ -1,70 +1,102 @@
 var webpack = require('webpack');
-var HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 var config = {
     // TODO: Add common Configuration
     module: {},
-    plugins: [new HardSourceWebpackPlugin()]
+    plugins: []
 };
 
-var viewerConfig = Object.assign({}, config, {
-  name: "app",
-  entry:  "./formbuilderdev-viewer.js",
+module.exports = (env) => {
+    const isDevBuild = !(env ? env.prod : process.env && process.env.NODE_ENV === "production");
 
-output: {
-  filename: "formbuilderdev-viewer.js",
-  path: __dirname + "/build",
-},
+    var viewerConfig = Object.assign({}, config, {
+        name: "app",
+        entry: ["babel-polyfill", "./formbuilderdev-viewer.js"],
+        mode: isDevBuild ? "development" : "production",
+        output: {
+          filename: "formbuilderdev-viewer.js",
+          path: __dirname + "/build"
+        },
 
-module: {
-  loaders: [
-    {
-      test: /.jsx?$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['env', 'stage-2', 'react']
-      }
-    },
-    {
-      test: /\.scss$/,
-      loader: "style-loader!css-loader!sass-loader"
-    }
-  ]
-},
-resolve: {
-  extensions: ['*', '.js', '.json', '.jsx', '.css', '.scss']
-}
-});
+        module: {
+            rules: [
+                {
+                    test: /.jsx?$/, exclude: /node_modules/, use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env', '@babel/preset-react'],
+                            plugins: ['@babel/plugin-proposal-class-properties'],
+                        }
+                    }
+                },
+                { test: /\.scss$/, use: 'style-loader!css-loader!sass-loader' }
+            ]
+        },
+        resolve: {
+            extensions: ['*', '.js', '.json', '.jsx', '.css', '.scss']
+        }
+    });
 
-var builderConfig = Object.assign({}, config, {
-  name: "app",
-  entry:  "./formbuilderdev-builder.js",
+    var builderConfig = Object.assign({}, config, {
+        name: "app",
+        entry: ["babel-polyfill", "./formbuilderdev-builder.js"],
+        mode: isDevBuild ? "development" : "production",
+        output: {
+          filename: "formbuilderdev-builder.js",
+          path: __dirname + "/build"
+        },
 
-output: {
-  filename: "formbuilderdev-builder.js",
-  path: __dirname + "/build",
-},
+        module: {
+            rules: [
+                {
+                    test: /.jsx?$/, exclude: /node_modules/, use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env', '@babel/preset-react'],
+                            plugins: ['@babel/plugin-proposal-class-properties'],
+                        }
+                    }
+                },
+                { test: /\.scss$/, use: 'style-loader!css-loader!sass-loader' }
+            ]
+        },
+        resolve: {
+            extensions: ['*', '.js', '.json', '.jsx', '.css', '.scss']
+        }
+    });
 
-module: {
-  loaders: [
-    {
-      test: /.jsx?$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['env', 'stage-2', 'react']
-      }
-    },
-    {
-      test: /\.scss$/,
-      loader: "style-loader!css-loader!sass-loader"
-    }
-  ]
-},
-resolve: {
-  extensions: ['*', '.js', '.json', '.jsx', '.css', '.scss']
-}
-});
+    var formConfig = Object.assign({}, config, {
+        name: "app",
+        entry: ["babel-polyfill", "./formsample.js"],
+        mode: isDevBuild ? "development" : "production",
+        output: {
+          filename: "formsample.js",
+          path: __dirname + "/build"
+        },
 
-module.exports = [viewerConfig, builderConfig];
+        module: {
+            rules: [
+                {
+                    test: /.jsx?$/, exclude: /node_modules/, use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env', '@babel/preset-react'],
+                            plugins: ['@babel/plugin-proposal-class-properties'],
+                        }
+                    }
+                },
+                { test: /\.scss$/, use: 'style-loader!css-loader!sass-loader' }
+            ]
+        },
+        resolve: {
+            extensions: ['*', '.js', '.json', '.jsx', '.css', '.scss']
+        }
+    });
+
+    return [
+        viewerConfig,
+        builderConfig,
+        formConfig
+    ];
+};
