@@ -1,6 +1,17 @@
 ﻿<!--Stay on the edge of our innovations and learn about the changes made to DWKit with each of our releases.-->
 # Release Notes
 
+## 1.8
+
+- Added possibility to change tabs in Tab control
+- The Files control now supports validation and can be disabled
+- Bug fix and minor improvements
+
+## 1.7
+
+- Camera and Signarute controls have been added.
+- Minor improvements.
+
 ## 1.6
 
 - Separation of basic functionality and library of controls (SemanticUI).

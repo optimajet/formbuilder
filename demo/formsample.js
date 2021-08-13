@@ -1,6 +1,10 @@
 import {DWKitForm} from './build/optimajet-form';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {validate} from './build/optimajet-form';
+import ajaxInterceptor from './ajaxinterceptor'
+
+// ajaxInterceptor.configureHeaders("accessToken");
 
 const formName = 'Demo';
 const data = {
@@ -127,7 +131,7 @@ const form = <DWKitForm
     eventFunc={(args) => {
         console.log('eventFunc', args);
 
-        if(Array.isArray(args.actions) && args.actions.includes("initSystem") && 
+        if(Array.isArray(args.actions) && args.actions.includes("initSystem") &&
             args.parameters && args.parameters["initialData"])
         {
             var initialData = args.parameters["initialData"];
@@ -138,6 +142,14 @@ const form = <DWKitForm
             }
         }
 
+        if(Array.isArray(args.actions) && args.actions.includes("validate")) {
+            let {valid, errors} = validate(args.component.props);
+            args.component.setState({errors});
+
+            if (!valid) throw new Error("Invalid data");
+        }
+
+        console.log("Execute next action...");
     }}
     getAdditionalDataForControl={(control, { startIndex, pageSize, filters, sort, model }, callback) => {
         console.log('getAdditionalDataForControl');
@@ -148,7 +160,7 @@ const form = <DWKitForm
     uploadUrl={''}
     downloadUrl={''}
     autoCheckConditions={true}
-    autoValidate={true}    
+    autoValidate={true}
 />;
 
 ReactDOM.render(form, document.getElementById('container'));

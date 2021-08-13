@@ -201,6 +201,7 @@
     padding-bottom: 5px;
     padding-top: 3px;
     height: 25px;
+    width: fit-content;
     padding-bottom: 20px;
     padding-left: 10px;
     line-height: 20px;
@@ -528,14 +529,29 @@ a.dwkit-btn{
 
 .dwkit-collectioneditor-header{
     font-weight: 600;
+    color: grey;
 }
 
-.dwkit-collectioneditor tr td:first-child{
-    display: flex;
+.dwkit-formbuilder-item-toolbar-container {
+  position: absolute;
+  right: auto;
+  will-change: transform;
+  top: 0px;
+  left: 0px;
+}
+
+.dwkit-collectioneditor .dwkit-formbuilder-item-toolbar-container { /* hack for correct position in table (customElement in collectonEditor)  */
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+.dwkit-collectioneditor .dwkit-formbuilder-item-toolbar-header { /* hack for correct position in table (customElement in collectonEditor)  */
+  position: absolute;
 }
 
 .dwkit-collectioneditor tr > td{
-    vertical-align: -webkit-baseline-middle;
+    vertical-align: top;
     padding-right: 10px;
 }
 
@@ -703,7 +719,8 @@ a.dwkit-btn{
     content:' *';
 }
 
-.ui.input.error .react-datepicker__input-container > input {
+.ui.input.error .react-datepicker__input-container > input,
+.error .react-datepicker__input-container > input {
   background-color: #fff6f6;
   border-color: #e0b4b4;
   color: #9f3a38;
@@ -711,7 +728,22 @@ a.dwkit-btn{
   box-shadow: none;
 }
 
-.ui.input.error textarea {
+.files, .file, .dropzone {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.files .file, .files .dropzone {
+  margin: 0;
+}
+
+.files.error, .file.error , .dropzone.error {
+  border: 1px solid;
+  padding: 5px;
+}
+
+.ui.input.error textarea,
+.files.error, .file.error, .dropzone.error  {
     background-color: #FFF6F6;
     border-color: #E0B4B4;
     color: #9F3A38;
@@ -762,6 +794,10 @@ a.dwkit-btn{
 
 .dwkit-workflowbar-items .ui.button{
   margin: 2px;
+}
+
+.dwkit-action-dropdown .ui.label {
+    word-break: break-all;
 }
 
 .dwkit-action-dropdown .ui.selection.dropdown .menu > .item {
@@ -1496,6 +1532,109 @@ a.dwkit-btn{
   cursor: default;
 }
 
+/* Camera CSS */
+.react-html5-camera-photo {
+  width: 100%;
+  min-width: 236px !important;
+  height: auto;
+}
+
+.react-html5-camera-photo > video {
+  width: 100%;
+  min-width: 236px;
+  height: auto;
+}
+
+#container-circles {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  float: right;
+  margin-right: calc(50% - 19px);
+  margin-top: -50px;
+  z-index: 1;
+}
+
+#outer-circle {
+  border-radius: 50%;
+  left: -37px;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(24, 26, 27, 0.4);
+}
+
+#inner-circle {
+  position: relative;
+  background-color: rgb(24, 26, 27);
+  border-radius: 50%;
+  height: 80%;
+  width: 80%;
+  top: 10%;
+  left: 10%;
+  background: #fff;
+  z-index: 2;
+}
+
+.image-uploaded-preview {
+  position: relative;
+  max-width: 223px;
+  height: auto;
+}
+
+.compact-image-preview {
+  position: relative;
+  display: inline-flex;
+  width: 74px;
+  height: 38px;
+}
+
+.compact-image-preview.signature {
+  max-width: 45px;
+}
+
+.image-uploaded-preview > img {
+  object-fit: cover;
+  cursor: pointer;
+  border-color: rgba(34,36,38,.15);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.image-uploaded-preview.compact {
+  display:  inline-flex; 
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+
+.image-uploaded-preview .image-preview {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  border-radius: .28571429rem;
+}
+
+.image-preview {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.react-html5-camera-photo > img {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.react-html5-camera-photo.placeholder {
+  height: 15vh;
+  min-height: 100px;
+  background-color: #F4F4F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Filepicker CSS */
 .filepicker {
     font-family: sans-serif;
@@ -1560,6 +1699,21 @@ div.filepicker {
     border-width: 11px 0 0 11px;
     border-style: solid;
     border-color: white transparent transparent #920035;
+}
+
+/* SignatureCanvas CSS */
+.signature-canvas-container {
+  width: 15vw;
+  height: 10vw;
+  min-width: 236px !important;
+  min-height: 236px !important;
+}
+
+.signature-canvas-container .canvas {
+  width: 100% !important;
+  height: calc(100% - 42px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /*
@@ -1957,8 +2111,6 @@ div.filepicker {
   border-style: solid;
   border-width: 1px;
   border-color: rgba(0,0,0,0.2);
-  margin-top: 16px;
-  margin-bottom: 16px;
   background: rgba(0, 0, 0, 0.02);
   color: rgba(46, 46, 46, 0.4);
 }
@@ -2163,6 +2315,31 @@ div.filepicker {
 
 .ui.form .fields .field > .fields{
   margin-bottom: 0.4em;
+}
+
+.field > label {
+  display: block;
+  margin: 0 0 .28571429rem 0;
+  color: rgba(0,0,0,.87);
+  font-size: .92857143em;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.field > textarea{
+  width: 100%;
+  padding: .78571429em 1em;
+  border: 1px solid rgba(34,36,38,.15);
+  outline: 0;
+  color: rgba(0,0,0,.87);
+  border-radius: .28571429rem;
+  -webkit-box-shadow: 0 0 0 0 transparent inset;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-transition: color .1s ease,border-color .1s ease;
+  transition: color .1s ease,border-color .1s ease;
+  font-size: 1em;
+  line-height: 1.2857;
+  resize: vertical;
 }
 
 .dwkit-formbuilder-toolbox{
@@ -2406,4 +2583,72 @@ textarea:read-only,
 .ui.form .fields.grouped > .fields{
   margin-right: 0em;
   margin-left: 0em;
+}
+
+.events-editor {
+  margin-top: -35px !important;
+  margin-bottom: -15px !important;
+}
+
+.events-editor-block {
+  margin-bottom: 30px;
+}
+
+.events-editor-checkbox {
+  font-weight: 900;
+}
+
+.events-editor-checkbox .checkbox > label {
+  font-size: 15px;
+}
+
+.events-editor .dwkit-collectioneditor {
+  border-spacing: 0 35px;
+}
+/* 
+.events-editor .dwkit-collectioneditor-header {
+  font-weight: normal;
+} */
+
+.events-editor .dwkit-collectioneditor-header > td:first-child {
+  padding-left: 22px;
+  width: 20%;
+}
+
+.parameters-editor .dwkit-collectioneditor-header > td:first-child {
+  padding-left: 0;
+}
+
+.events-editor .dwkit-collectioneditor-header > td:nth-child(2) {
+  width: 43%;
+}
+
+.events-editor .dwkit-collectioneditor-header > td:nth-child(3) {
+  width: 25%;
+}
+
+.parameters-editor .dwkit-collectioneditor {
+  border-spacing: 0;
+}
+
+.events-editor .dwkit-collectioneditor-buttoncol {
+  opacity: 0;
+  width: 40px !important;
+}
+
+.parameters-editor .dwkit-collectioneditor-buttoncol {
+  width: 48px !important;
+}
+
+.parameters-editor .dwkit-collectioneditor-buttoncol {
+  opacity: 1;
+}
+
+.events-editor .parameters-editor {
+  margin-top: -26px !important;
+  min-height: 67px;
+}
+
+.bottom.attached.segment.tab.top {
+  margin-bottom: 0 !important;
 }
