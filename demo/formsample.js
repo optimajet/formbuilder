@@ -140,6 +140,9 @@ const form = <DWKitForm
                     data[field] = initialData[field];
                 }
             }
+            //let {valid, errors} = validate(args.component.props);
+            //args.component.setState({errors});
+            args.component.checkConditions(args.component.props.model);
         }
 
         if(Array.isArray(args.actions) && args.actions.includes("validate")) {
