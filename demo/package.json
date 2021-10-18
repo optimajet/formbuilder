@@ -57,7 +57,7 @@
     "babel-polyfill": "^6.26.0"
   },
   "bugs": {
-    "url": "http://formbuilder.dev"
+    "url": "https://formbuilder.dev"
   },
-  "homepage": "http://formbuilder.dev"
+  "homepage": "https://formbuilder.dev"
 }

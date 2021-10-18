@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {DWKitFormBuilder} from "./build/optimajet-builder";
-import {DWKitStore} from "./build/optimajet-builder";
 
 function getform(formname)
 {
@@ -108,7 +107,7 @@ ReactDOM.render(
 
 formbuilder.load('./application-form');
 
-DWKitStore.listen(function (form) {
+formbuilder.getStore().listen(function (form) {
     // log form data on change
     console.log(JSON.stringify(form));
 });
