@@ -1,5 +1,10 @@
 ﻿<!--Stay on the edge of our innovations and learn about the changes made to DWKit with each of our releases.-->
+
 # Release Notes
+
+## 1.8.2
+
+- Bug fix and minor improvements
 
 ## 1.8.1
 
