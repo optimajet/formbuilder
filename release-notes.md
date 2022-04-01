@@ -2,6 +2,11 @@
 
 # Release Notes
 
+## 1.8.3
+
+- Improve adaptation for large screen sizes
+- Prevent validation for hidden (by visibility-condition) controls
+
 ## 1.8.2
 
 - Bug fix and minor improvements

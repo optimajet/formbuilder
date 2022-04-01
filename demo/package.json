@@ -1,63 +1,63 @@
 {
-  "name": "optimajet-formbuilder",
-  "version": "1.8.2",
-  "description": "OptimaJet FormBuilder",
-  "main": "lib/app.js",
-  "scripts": {
-    "test": "mocha --compilers js:babel-core/register --recursive",
-    "start": "webpack-dev-server --hot --inline --env.NODE_ENV=development",
-    "dist": "webpack --env.prod",
-    "dist-dev": "webpack --env.NODE_ENV=development"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/optimateam/dwkit.git"
-  },
-  "keywords": [
-    "https://formbuilder.dev"
-  ],
-  "author": "OptimaJet",
-  "license": "SEE LICENSE IN eula.txt",
-  "dependencies": {
-    "clone": "2.1.2",
-    "draft-convert": "2.1.8",
-    "draft-js": "0.11.3",
-    "jquery": "3.4.1",
-    "json5": "2.1.3",
-    "moment": "2.25.3",
-    "numeral": "2.0.6",
-    
-    "react": "16.13.1",
-    "react-data-grid": "4.0.9",
-    "react-datepicker": "1.6.0",
-    "react-dom": "16.8.3",
-    "react-dropzone-component": "3.2.0",
-    "react-fast-compare": "3.0.2",
-    "react-grid-layout": "0.16.6",
-    "react-html5-camera-photo": "^1.5.4",
-    "react-number-format": "4.3.1",
-    "react-signature-canvas": "^1.0.3",
-    "react-slick": "0.25.2",
-    "react-split": "2.0.7",
-    "reflux": "6.4.1",
-    "semantic-ui-react": "0.87.3",
-    "uuid": "3.3.2"
-  },
-  "peerDependencies": {},
-  "devDependencies": {
-    "@babel/core": "7.9.6",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
-    "babel-loader": "^8.1.0",
-    "uglifyjs-webpack-plugin": "2.1.3",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0",
-    "babel-polyfill": "^6.26.0"
-  },
-  "bugs": {
-    "url": "https://formbuilder.dev"
-  },
-  "homepage": "https://formbuilder.dev"
+    "name": "optimajet-formbuilder",
+    "version": "1.8.3",
+    "description": "OptimaJet FormBuilder",
+    "main": "lib/app.js",
+    "scripts": {
+        "test": "mocha --compilers js:babel-core/register --recursive",
+        "start": "webpack-dev-server --hot --inline --env.NODE_ENV=development",
+        "dist": "webpack --env.prod",
+        "dist-dev": "webpack --env.NODE_ENV=development"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/optimateam/dwkit.git"
+    },
+    "keywords": [
+        "https://formbuilder.dev"
+    ],
+    "author": "OptimaJet",
+    "license": "SEE LICENSE IN eula.txt",
+    "dependencies": {
+        "clone": "2.1.2",
+        "draft-convert": "2.1.8",
+        "draft-js": "0.11.3",
+        "jquery": "3.4.1",
+        "json5": "2.1.3",
+        "moment": "2.25.3",
+        "numeral": "2.0.6",
+        
+        "react": "16.13.1",
+        "react-data-grid": "4.0.9",
+        "react-datepicker": "1.6.0",
+        "react-dom": "16.8.3",
+        "react-dropzone-component": "3.2.0",
+        "react-fast-compare": "3.0.2",
+        "react-grid-layout": "0.16.6",
+        "react-html5-camera-photo": "^1.5.4",
+        "react-number-format": "4.3.1",
+        "react-signature-canvas": "^1.0.3",
+        "react-slick": "0.25.2",
+        "react-split": "2.0.7",
+        "reflux": "6.4.1",
+        "semantic-ui-react": "0.87.3",
+        "uuid": "3.3.2"
+    },
+    "peerDependencies": {},
+    "devDependencies": {
+        "@babel/core": "7.9.6",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/preset-env": "^7.9.6",
+        "@babel/preset-react": "^7.9.4",
+        "babel-loader": "^8.1.0",
+        "uglifyjs-webpack-plugin": "2.1.3",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.11.0",
+        "babel-polyfill": "^6.26.0"
+    },
+    "bugs": {
+        "url": "https://formbuilder.dev"
+    },
+    "homepage": "https://formbuilder.dev"
 }
