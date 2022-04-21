@@ -2,6 +2,10 @@
 
 # Release Notes
 
+## 1.8.4
+
+- Bug fix and minor improvements
+
 ## 1.8.3
 
 - Improve adaptation for large screen sizes
