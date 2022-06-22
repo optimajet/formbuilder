@@ -2,6 +2,10 @@
 
 # Release Notes
 
+## 1.8.5
+
+- Added a property for editing HTML attributes of elements
+
 ## 1.8.4
 
 - Bug fix and minor improvements
