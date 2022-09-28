@@ -2,24 +2,40 @@
 
 # Release Notes
 
+## 1.8.6
+
+_September 28, 2022_
+
+- Added download timeout to configuration settings
+
 ## 1.8.5
+
+_June 21, 2022_
 
 - Added a property for editing HTML attributes of elements
 
 ## 1.8.4
 
+_April 21, 2022_
+
 - Bug fix and minor improvements
 
 ## 1.8.3
+
+_April 1, 2022_
 
 - Improve adaptation for large screen sizes
 - Prevent validation for hidden (by visibility-condition) controls
 
 ## 1.8.2
 
+_December 3, 2021_
+
 - Bug fix and minor improvements
 
 ## 1.8.1
+
+_November 30, 2021_
 
 - Bug fix and minor improvements
 
