@@ -1,6 +1,4 @@
-﻿<!--Stay on the edge of our innovations and learn about the changes made to DWKit with each of our releases.-->
-
-# Release Notes
+﻿# Release Notes
 
 ## 1.8.6
 
