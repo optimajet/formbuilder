@@ -1,6 +1,6 @@
 {
     "name": "optimajet-formbuilder",
-    "version": "1.8.6",
+    "version": "1.8.7",
     "description": "OptimaJet FormBuilder",
     "main": "lib/app.js",
     "scripts": {

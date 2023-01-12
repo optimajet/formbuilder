@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.8.7
+
+_January 12, 2023_
+
+- The SemanticUI control for the input with the "time" type has been replaced with a standard one
+
 ## 1.8.6
 
 _September 28, 2022_
