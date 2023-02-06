@@ -1,5 +1,12 @@
 ﻿# Release Notes
 
+## 1.8.9
+
+_February 6, 2023_
+
+- Fix nested controls validation conditions checking
+- Bug fix and minor improvements
+
 ## 1.8.8
 
 _January 17, 2023_
