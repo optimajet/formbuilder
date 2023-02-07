@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.9.0
+
+_February 7, 2023_
+
+- Bug fix and minor improvements
+
 ## 1.8.9
 
 _February 6, 2023_
