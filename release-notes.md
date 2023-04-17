@@ -1,5 +1,13 @@
 ﻿# Release Notes
 
+## 1.10.0
+
+_April 17, 2023_
+
+- Provision to show custom columns in Files control
+- Improved compatibility with React 18
+- Bug fix and minor improvements
+
 ## 1.9.0
 
 _February 7, 2023_

@@ -7,7 +7,7 @@
     display: flex;
     flex: 1;
     align-items: stretch;
-    min-height: 400px;
+    min-height: 0;
     min-width: 500px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -32,8 +32,6 @@
 .dwkit-formbuilder-content{
     width: calc(100% - 200px);
     float: left;
-    /*background-color: #F9F9F9;*/
-    min-height: 400px;
     overflow-y: auto;
 }
 
@@ -81,8 +79,6 @@
 
 .dwkit-formbuilder-toolbox{
     overflow-y: auto;
-    height: 100vh;
-    float: right;
     background-color: #1262E2;
     color: white;
     width: 210px;
