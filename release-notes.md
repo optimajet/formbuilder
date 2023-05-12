@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.11.0
+
+_May 12, 2023_
+
+- Fix bug with Dropdown options
+
 ## 1.10.0
 
 _April 17, 2023_
