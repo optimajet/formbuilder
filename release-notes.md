@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.12.0
+
+_June 2, 2023_
+
+- Add onDownloadFail event to Files control
+
 ## 1.11.0
 
 _May 12, 2023_
