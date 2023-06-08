@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.13.0
+
+_June 8, 2023_
+
+- Fix a corrupted file download
+
 ## 1.12.0
 
 _June 2, 2023_
