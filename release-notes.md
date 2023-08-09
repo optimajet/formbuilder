@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.14.0
+
+_August 9, 2023_
+
+- Added ability to sort Dropdown items in alphabetical order
+
 ## 1.13.0
 
 _June 8, 2023_
