@@ -1,5 +1,12 @@
 ﻿# Release Notes
 
+## 1.15.0
+
+_August 8, 2024_
+
+- Added support for Node.js 20.10
+- Fixed a bug where the error tooltip was not displayed on the `Radio group` component
+
 ## 1.14.0
 
 _August 9, 2023_
