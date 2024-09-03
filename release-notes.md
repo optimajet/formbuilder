@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.16.0
+
+_September 3, 2024_
+
+- Fixed a bug where the `required` validation did not work after clearing the value in the `Dropdown` component with the `multiple` option
+
 ## 1.15.0
 
 _August 8, 2024_
