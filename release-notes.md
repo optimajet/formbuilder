@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.17.0
+
+_October 7, 2024_
+
+- Fixed a bug where error classes were not applied to the `Radio group` component
+
 ## 1.16.0
 
 _September 3, 2024_
