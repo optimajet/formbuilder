@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.18.0
+
+_October 18, 2024_
+
+- Fixed a bug that caused values of hidden fields to be added to form data
+
 ## 1.17.0
 
 _October 7, 2024_
