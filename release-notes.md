@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.20.0
+
+_November 14, 2024_
+
+- Fixed a bug that caused the entered value and an empty string in the DateTimePicker to be processed incorrectly.
+
 ## 1.19.0
 
 _November 8, 2024_
