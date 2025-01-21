@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.21.0
+
+_January 21, 2025_
+
+- Fixed a bug that caused custom controls to not be supported in CollectionEditor.
+
 ## 1.20.0
 
 _November 14, 2024_
