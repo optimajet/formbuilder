@@ -200,7 +200,6 @@
 /*ITEM-HEADER*/
 
 .dwkit-formbuilder-item-toolbar-header {
-    opacity: 0.2;
     z-index: 100;
     white-space: nowrap;
     height: 0px;
@@ -213,13 +212,10 @@
     line-height: 20px;
     color: black;
     font-weight: 400;
-}
-
-.dwkit-formbuilder-item-toolbar-header:hover {
-  background: white;
-  -webkit-box-shadow: 0px 6px 10px rgba(18, 83, 204, 0.12), 0px 1px 18px rgba(18, 83, 204, 0.12), 0px 3px 5px rgba(18, 83, 204, 0.15);
-  box-shadow: 0px 6px 10px rgba(18, 83, 204, 0.12), 0px 1px 18px rgba(18, 83, 204, 0.12), 0px 3px 5px rgba(18, 83, 204, 0.15);
-  border-radius: 11px;
+    background: white;
+    -webkit-box-shadow: 0px 6px 10px rgba(18, 83, 204, 0.12), 0px 1px 18px rgba(18, 83, 204, 0.12), 0px 3px 5px rgba(18, 83, 204, 0.15);
+    box-shadow: 0px 6px 10px rgba(18, 83, 204, 0.12), 0px 1px 18px rgba(18, 83, 204, 0.12), 0px 3px 5px rgba(18, 83, 204, 0.15);
+    border-radius: 11px;
 }
 
 .dwkit-formbuilder-item-toolbar-header-buttons {
@@ -231,10 +227,6 @@
     margin-right: 5px;
 }
 
-.dwkit-formbuilder-item-toolbar-header:hover {
-    opacity: 1;
-}
-
 .dwkit-formbuilder-item-selected{
     outline-style: solid;
     outline-width: 1px;
@@ -244,7 +236,6 @@
 select .dwkit-formbuilder-item-toolbar-header:hover,
 input .dwkit-formbuilder-item-toolbar-header:hover {
     cursor: move;
-    opacity: 1;
 }
 
 .toolbar-header {
@@ -540,10 +531,19 @@ a.dwkit-btn{
 
 .dwkit-formbuilder-item-toolbar-container {
   position: absolute;
+  visibility: hidden;
+  opacity: 0;
   right: auto;
   will-change: transform;
   top: 0px;
   left: 0px;
+  transition: opacity 200ms ease-in-out;
+  transform: translate(-100%, -50%);
+}
+
+.dwkit-formbuilder-item-toolbar-container.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .dwkit-collectioneditor .dwkit-formbuilder-item-toolbar-container { /* hack for correct position in table (customElement in collectonEditor)  */

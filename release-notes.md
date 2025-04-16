@@ -1,11 +1,18 @@
 ﻿# Release Notes
 
+## 1.22.0
+
+_April 15, 2025_
+
+- Now the toolbar of the component is shown only when the mouse hovers over the component itself, so that different
+  toolbars do not overlap each other.
+
 ## 1.21.0
 
 _January 21, 2025_
 
 - Fixed a bug that caused custom controls to not be supported in CollectionEditor.
-
+-
 ## 1.20.0
 
 _November 14, 2024_
