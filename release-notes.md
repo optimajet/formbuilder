@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.23.0
+
+_September 19, 2025_
+
+- Fixed a bug where moving components from a form into the CollectionEditor did not work.
+
 ## 1.22.0
 
 _April 15, 2025_
