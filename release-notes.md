@@ -1,5 +1,11 @@
 ﻿# Release Notes
 
+## 1.24.0
+
+_October 7, 2025_
+
+- Fixed a bug that caused toolbars to be incorrectly positioned during scrolling.
+
 ## 1.23.0
 
 _September 19, 2025_

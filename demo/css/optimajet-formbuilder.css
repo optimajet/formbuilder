@@ -530,7 +530,7 @@ a.dwkit-btn{
 }
 
 .dwkit-formbuilder-item-toolbar-container {
-  position: absolute;
+  position: fixed;
   visibility: hidden;
   opacity: 0;
   right: auto;
